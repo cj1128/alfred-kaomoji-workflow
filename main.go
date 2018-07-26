@@ -28,6 +28,7 @@ func main() {
 			Title:    kaomoji.kaomoji,
 			Subtitle: kaomoji.name,
 			Arg:      kaomoji.kaomoji,
+			Valid:    true,
 			// hide icon
 			Icon: &gofred.Icon{
 				Path: " ",

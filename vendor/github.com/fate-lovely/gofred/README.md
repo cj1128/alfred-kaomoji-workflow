@@ -18,6 +18,8 @@ go get github.com/fate-lovely/gofred
 
 ### Example
 
+**make sure to set `Valid` attribute of `Item` and `Mod`, its default value is `false`**.
+
 ```go
 package main
 
@@ -32,6 +34,7 @@ func main() {
         Title:    "titl1",
         Subtitle: "subtitle1",
         Arg:      "arg1",
+        Valid:    true,
         Icon: &gofred.Icon{
             Type: "filetype",
             Path: "public.png",
@@ -42,14 +45,12 @@ func main() {
         Title:    "title2",
         Subtitle: "subtitle2",
         Arg:      "arg2",
+        Valid:    true,
     })
 
-    json, err := gofred.JSON()
-    fmt.Println(err)
+    json, _ := gofred.JSON()
     fmt.Println(json)
 }
-
-// <nil>
 // {
 //   "items": [
 //     {
@@ -59,12 +60,14 @@ func main() {
 //       "icon": {
 //         "type": "filetype",
 //         "path": "public.png"
-//       }
+//       },
+//       "valid": true
 //     },
 //     {
 //       "title": "title2",
 //       "subtitle": "subtitle2",
-//       "arg": "arg2"
+//       "arg": "arg2",
+//       "valid": true
 //     }
 //   ]
 // }
